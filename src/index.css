@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add Dark and Light mode palettes */
+
+:root {
+  --main: #83b7f1;
+}
+
+#snapContainer {
+  height: 100vh;
+  width: 100vw;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+#snapContainer > * {
+  scroll-snap-align: start;
+}
+
+.brutalButton {
+  border: 2px solid black;
+  padding: 0.2em;
+  border-radius: 0.2em;
+  box-shadow: 0.3em 0.3em 0px 0 var(--main);
+  transition: all;
+  transition-duration: 200ms;
+  transform: translate(0);
+}
+
+.brutalButton:hover {
+  transform: translate(5%, 10%);
+  box-shadow: 0 0 0px;
+}
