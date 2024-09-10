@@ -34,7 +34,7 @@ export default function TextAnimation({ text }: { text: string }) {
 
   return (
     <motion.h1
-      className="text-[10em] h-min hover:cursor-pointer"
+      className="text-9xl sm:text-[10em] h-min hover:cursor-pointer"
       whileHover="hover"
       onHoverStart={hoverStart}
       onHoverEnd={hoverEnd}

@@ -31,7 +31,7 @@ function App() {
   return (
     <main
       id="snapContainer"
-      className="bg-white text-black dark:bg-black dark:text-white "
+      className="bg-white text-black dark:bg-black dark:text-white"
     >
       <header className="flex flex-col justify-between items-center h-screen">
         {/* dark light mode toggle */}
