@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +8,16 @@
 
 :root {
   --main: #83b7f1;
+  --border: #000;
+}
+
+.dark {
+  --main: #5a8fcc;
+  --border: #fff;
+}
+
+html {
+  font-family: "DM Sans", sans-serif;
 }
 
 #snapContainer {
@@ -21,7 +33,7 @@
 }
 
 .brutalButton {
-  border: 2px solid black;
+  border: 2px solid;
   padding: 0.2em;
   border-radius: 0.2em;
   box-shadow: 0.3em 0.3em 0px 0 var(--main);
