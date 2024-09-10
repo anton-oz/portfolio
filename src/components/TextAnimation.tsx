@@ -1,15 +1,15 @@
 import { motion, useAnimationControls, useDragControls } from "framer-motion";
-import { PointerEventHandler, useEffect } from "react";
+import { useEffect, PointerEvent } from "react";
 
 export default function TextAnimation({ text }: { text: string }) {
   const animationControls = useAnimationControls();
   const dragControls = useDragControls();
 
-  const startDrag = (event) => {
+  const startDrag = (event: PointerEvent<HTMLDivElement>) => {
     dragControls.start(event);
   };
 
-  const endDrag = (event) => {
+  const endDrag = () => {
     animationControls.start("return", { duration: 0.4, ease: "backInOut" });
   };
 

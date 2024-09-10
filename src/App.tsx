@@ -1,7 +1,6 @@
 import ToggleSwitch from "./components/ToggleSwitch";
 import { useState, useEffect } from "react";
 import TextAnimation from "./components/TextAnimation";
-import { body } from "framer-motion/client";
 
 function App() {
   const storedState = localStorage.getItem("darkmode");
