@@ -1,6 +1,4 @@
 export default function Projects() {
-  const pubPath = "/projectScreenshots";
-
   const projects = [
     {
       name: "Tweeter",
