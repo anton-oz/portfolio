@@ -1,5 +1,5 @@
-import TextAnimation from "./TextAnimation";
-import ToggleSwitch from "./ToggleSwitch";
+import TextAnimation from "./ui/TextAnimation";
+import ToggleSwitch from "./ui/ToggleSwitch";
 import { useState, useEffect } from "react";
 import { ChevronDown, Download, Mail } from "lucide-react";
 
@@ -55,6 +55,7 @@ export default function Header() {
           <a
             className="brutalButton flex items-center gap-1"
             href="https://github.com/anton-oz"
+            target="_blank"
           >
             Github
             <img

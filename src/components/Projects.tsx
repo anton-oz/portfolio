@@ -1,52 +1,64 @@
+import Dropdown from "./ui/Dropdown";
+
 export default function Projects() {
   const projects = [
     {
       name: "Tweeter",
-      deployedLink: `https://tweeter-4z96.onrender.com/`,
-      github: "https://github.com/anton-oz/tweeter",
+      links: [
+        {
+          name: "Live Site",
+          link: `https://tweeter-4z96.onrender.com/`,
+        },
+        {
+          name: "Github",
+          link: "https://github.com/anton-oz/tweeter",
+        },
+      ],
     },
     {
       name: "Reading Forward",
-      deployedLink: `https://anton-oz.github.io/readingforward/`,
-      github: "https://github.com/anton-oz/readingforward",
+      links: [
+        {
+          name: "Live Site",
+          link: `https://anton-oz.github.io/readingforward/`,
+        },
+        {
+          name: "Github",
+          link: "https://github.com/anton-oz/readingforward",
+        },
+      ],
     },
     {
-      name: "More projects coming soon...",
-      deployedLink: ``,
-      github: "",
+      name: "More coming soon...",
+      links: [
+        {
+          name: "",
+          link: "",
+        },
+      ],
     },
   ];
 
   return (
     <section
       id="projects"
-      className="h-screen w-screen relative flex flex-wrap justify-center align-center p-2 gap-3 overflow-y-scroll"
+      className="h-screen h-[100dvh] w-screen relative flex flex-col sm:flex-row sm:flex-wrap justify-start items-start sm:justify-center overflow-x-scroll"
     >
       {projects.map((project, i) => (
         <div
           key={i}
           id={`project-${i + 1}`}
-          className="w-full max-w-[700px] min-h-[284px] project-tile max-h-full flex justify-end border border-black dark:border-white p-2 rounded-md"
+          className={`w-full sm:max-w-[50%] min-h-[20%] project-tile h-[23%] sm:h-full max-h-[50%] flex ${
+            project.name === "More coming soon..."
+              ? "justify-center items-center"
+              : "justify-end"
+          } p-2`}
         >
-          <div className="bg-white text-black rounded-md w-fit h-fit p-2 ">
-            {project.name}
-            {project.name === "More projects coming soon..." ? (
-              ""
-            ) : (
-              <ul className="text-sm pl-4 underline">
-                <li className="hover:scale-105 transition-all duration-150">
-                  <a href={project.deployedLink} target="_blank">
-                    Deployed App
-                  </a>
-                </li>
-                <li className="hover:scale-105 transition-all duration-150">
-                  <a href={project.github} target="_blank">
-                    Github
-                  </a>
-                </li>
-              </ul>
-            )}
-          </div>
+          {project.name === "More coming soon..." ? (
+            project.name
+          ) : (
+            <Dropdown text={project.name} items={project.links} />
+          )}
         </div>
       ))}
     </section>

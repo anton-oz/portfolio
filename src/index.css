@@ -8,6 +8,7 @@
 
 :root {
   --main: #83b7f1;
+  --secondary: #36deff;
   --border: #000;
   --bg: #fff;
   --text: #000;
@@ -15,6 +16,7 @@
 
 .dark {
   --main: #5a8fcc;
+  /* --secondary: #ace246; */
   --border: #fff;
   --bg: #000;
   --text: #fff;
@@ -39,6 +41,8 @@ body {
   scroll-snap-align: start;
 }
 
+/* neo brutalism styles */
+
 .brutalButton {
   border: 2px solid;
   padding: 0.3em;
@@ -54,11 +58,27 @@ body {
   box-shadow: 0 0 0px;
 }
 
+.brutalDropdown {
+  border: 2px solid;
+  padding: 0.3em;
+  border-radius: 0.2em;
+  box-shadow: 0.3em 0.3em 0px 0 var(--secondary);
+  transition: transform, box-shadow;
+  transition-duration: 200ms;
+  transform: translate(0);
+}
+
+.brutalDropdown:focus {
+  transform: translate(5%, 10%);
+  box-shadow: 0 0 0px;
+}
+
 /* Project Tiles bg-images */
 
 .project-tile {
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #project-1 {
