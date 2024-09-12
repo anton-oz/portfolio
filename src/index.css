@@ -9,21 +9,28 @@
 :root {
   --main: #83b7f1;
   --border: #000;
+  --bg: #fff;
+  --text: #000;
 }
 
 .dark {
   --main: #5a8fcc;
   --border: #fff;
+  --bg: #000;
+  --text: #fff;
 }
 
-html {
+body {
   font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  border-color: var(--border);
+  background-color: var(--bg);
+  overflow: hidden;
 }
 
 #snapContainer {
   height: 100vh;
   width: 100vw;
-  /* scroll-behavior: smooth !important; */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
@@ -45,4 +52,19 @@ html {
 .brutalButton:hover {
   transform: translate(5%, 10%);
   box-shadow: 0 0 0px;
+}
+
+/* Project Tiles bg-images */
+
+.project-tile {
+  background-position: center;
+  background-size: cover;
+}
+
+#project-1 {
+  background-image: url("/projectScreenshots/tweeterScreenshot.png");
+}
+
+#project-2 {
+  background-image: url("/projectScreenshots/readingforwardScreenshot.png");
 }
