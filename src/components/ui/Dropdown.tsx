@@ -44,7 +44,7 @@ export default function Dropdown({
       </button>
       <div
         role="listbox"
-        className="absolute left-2 w-full group-data-[state=open]:top-16 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-md border-2 border-border dark:border-darkBorder text-center font-base shadow-light dark:shadow-dark transition-all"
+        className="absolute left-2 w-full group-data-[state=open]:top-16 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-md border-2 border-border dark:border-darkBorder text-center font-base shadow-light dark:shadow-dark transition-all z-10"
         onMouseEnter={() => {
           setIsActiveDropdown(!isActiveDropdown);
         }}

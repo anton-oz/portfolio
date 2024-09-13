@@ -27,7 +27,7 @@ body {
   color: var(--text);
   border-color: var(--border);
   background-color: var(--bg);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #snapContainer {
