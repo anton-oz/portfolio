@@ -61,6 +61,7 @@ export default function Header() {
             <img
               className="h-6"
               src={toggled ? "/github-mark-white.svg" : "/github-mark.svg"}
+              alt="Github logo"
             />
           </a>
         </div>
@@ -68,7 +69,8 @@ export default function Header() {
       <div className="p-20">
         <a
           href="#projects"
-          className="flex flex-col justify-center items-center animate-fadeIn hover:scale-110 transition-all duration-150"
+          className="flex flex-col justify-center items-center animate-fadeIn hover:scale-110 transition-all duration-150 "
+          aria-label="Scroll down to project section"
         >
           <ChevronDown className="w-20 h-20 animate-bounce" strokeWidth={1} />
         </a>

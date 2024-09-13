@@ -6,8 +6,12 @@ export default function ToggleSwitch({
   setIsToggled: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
-    <label className="relative inline-flex cursor-pointer items-center">
+    <label
+      htmlFor="themeToggle"
+      className="relative inline-flex cursor-pointer items-center"
+    >
       <input
+        id="themeToggle"
         type="checkbox"
         onChange={(e) => {
           setIsToggled(e.target.checked);
