@@ -48,11 +48,7 @@ export default function Projects() {
         <div
           key={i}
           id={`project-${i + 1}`}
-          className={`w-full sm:max-w-[50%] min-h-[20%] project-tile h-[23%] sm:h-full max-h-[50%] flex ${
-            project.name === "More coming soon..."
-              ? "justify-center items-center"
-              : "justify-end"
-          } p-2`}
+          className={`w-full sm:max-w-[50%] min-h-[20%] project-tile h-[23%] sm:h-full max-h-[50%] flex justify-center items-center p-2 text-2xl`}
         >
           {project.name === "More coming soon..." ? (
             project.name

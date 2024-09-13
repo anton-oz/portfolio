@@ -47,7 +47,7 @@ export default function Header() {
           </a>
           <a
             className="brutalButton flex items-center gap-1"
-            href="mailto:test@example.com"
+            href="mailto:antonosland789@gmail.com"
           >
             Contact
             <Mail className="h-6" />
