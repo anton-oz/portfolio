@@ -40,7 +40,7 @@ export default function Header() {
           <a
             className="brutalButton flex items-center gap-1"
             download
-            href="sample.pdf"
+            href="/AntonOslandResume.pdf"
           >
             Resume
             <Download className="h-6" />
