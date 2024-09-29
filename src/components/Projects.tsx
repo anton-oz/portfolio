@@ -20,7 +20,7 @@ export default function Projects() {
       links: [
         {
           name: "Live Site",
-          link: `https://anton-oz.github.io/readingforward/`,
+          link: `https://readingforwardmn.com`,
         },
         {
           name: "Github",
