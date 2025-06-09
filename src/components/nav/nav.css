@@ -1,0 +1,47 @@
+nav {
+  height: 6em;
+  padding: 1.5em 2em;
+
+  background: linear-gradient(var(--surface-0), var(--base));
+  filter: drop-shadow(0 0 4rem var(--surface-1));
+}
+
+nav h1 {
+  position: absolute;
+  width: 0;
+
+  font-size: 3em;
+  letter-spacing: 0.1em;
+
+  border-bottom: 3px solid var(--text);
+
+  /* cursor: pointer; */
+  cursor: default;
+
+  transition: all;
+  transition-duration: 200ms;
+}
+
+nav h1:hover {
+  letter-spacing: normal;
+  border-bottom-color: var(--text);
+  padding-right: 2em;
+}
+
+@keyframes widen {
+  from {
+    width: 0;
+  }
+  to {
+    width: 9.5rem;
+  }
+}
+
+@keyframes shorten {
+  from {
+    width: 9.5rem;
+  }
+  to {
+    width: 0;
+  }
+}

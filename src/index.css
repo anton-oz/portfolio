@@ -8,7 +8,8 @@
 
   color-scheme: light dark;
   color: #cdd6f4;
-  background-color: var(--mantel);
+  background: var(--base);
+  /* background: linear-gradient(var(--crust), var(--base) 25%); */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
