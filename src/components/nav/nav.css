@@ -1,6 +1,9 @@
 nav {
-  height: 6em;
-  padding: 1.5em 2em;
+  /* height: 6em; */
+
+  width: 16.5em;
+  height: 100%;
+  padding: 2em 3em;
 
   background: linear-gradient(var(--surface-0), var(--base));
   filter: drop-shadow(0 0 4rem var(--surface-1));
@@ -8,12 +11,11 @@ nav {
 
 nav h1 {
   position: absolute;
-  width: 0;
 
   font-size: 3em;
   letter-spacing: 0.1em;
 
-  border-bottom: 3px solid var(--text);
+  border-bottom: 3px solid transparent;
 
   /* cursor: pointer; */
   cursor: default;
@@ -33,13 +35,13 @@ nav h1:hover {
     width: 0;
   }
   to {
-    width: 9.5rem;
+    width: 9rem;
   }
 }
 
 @keyframes shorten {
   from {
-    width: 9.5rem;
+    width: 9rem;
   }
   to {
     width: 0;
