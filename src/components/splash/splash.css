@@ -1,24 +1,25 @@
 .splash {
   width: 100vw;
-  height: 45vh;
+  height: fit-content;
   padding-top: 12vh;
+  padding-bottom: 6vh;
 
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-}
 
-.splash h1,
-ul {
-  animation:
-    fade-in ease-in 900ms,
-    move-up ease-out 1s;
-}
+  h1,
+  ul {
+    animation:
+      fade-in ease-in 900ms,
+      move-up ease-out 1s;
+  }
 
-.splash h1 {
-  font-size: 8em;
-  border-bottom: 3px solid var(--text);
+  h1 {
+    font-size: 8em;
+    border-bottom: 3px solid var(--text);
+  }
 }
 
 .link-container {
@@ -33,66 +34,72 @@ ul {
   align-items: center;
 
   gap: 1em;
-}
 
-.link-container li {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.link-container a {
-  position: relative;
-  padding: 0.5em 1em;
-
-  color: inherit;
-  text-decoration: none;
-  font-size: 1.25em;
-  text-align: center;
-
-  border: 2px solid var(--text);
-  border-radius: 1em;
-
-  transition: all 200ms;
-  animation-iteration-count: 1;
-}
-
-.link-container a:hover {
-  color: var(--base);
-  background-color: var(--text);
-}
-
-.link-container .wave {
-  position: absolute;
-  place-self: center;
-  width: 1em;
-  height: 1em;
-  padding: 1em;
-
-  border-radius: 50%;
-  pointer-events: none;
-  border-width: thin;
-
-  animation-fill-mode: forwards;
-}
-
-@keyframes ripple {
-  from {
-    background: none;
-    opacity: 1;
-    border-radius: 50%;
-    transform: scale(0);
-    border: 0.1px solid var(--blue);
-    border-width: thin;
+  li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  to {
-    background: none;
-    border: 0.1px solid var(--blue);
+
+  a {
+    transition: all 200ms;
+  }
+
+  a:focus {
+    outline: none;
+  }
+
+  svg {
+    width: 3em;
+    height: 3em;
+    fill: var(--text);
+  }
+
+  .name-link {
+    position: relative;
+    padding: 0.5em 1em;
+
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.25em;
+    text-align: center;
+
+    border: 2px solid var(--text);
+    border-radius: 1em;
+
+    animation-iteration-count: 1;
+  }
+  .name-link:hover {
+    color: var(--base);
+    background-color: var(--text);
+  }
+
+  .name-link:focus {
+    color: var(--base);
+    background-color: var(--text);
+  }
+
+  .icon-link:hover {
+    transform: scale(1.1);
+  }
+
+  .icon-link:focus {
+    transform: scale(1.1);
+  }
+
+  .wave {
+    position: absolute;
+    place-self: center;
+    width: 1em;
+    height: 1em;
+    padding: 1em;
+
     border-radius: 50%;
-    transform: scale(10);
-    opacity: 0;
-    filter: blur(0.3px);
+    pointer-events: none;
+    border-width: thin;
+
+    animation-fill-mode: forwards;
   }
 }
 
@@ -113,5 +120,24 @@ ul {
   }
   to {
     transform: translateY(0);
+  }
+}
+
+@keyframes ripple {
+  from {
+    background: none;
+    opacity: 1;
+    border-radius: 50%;
+    transform: scale(0);
+    border: 0.1px solid var(--blue);
+    border-width: thin;
+  }
+  to {
+    background: none;
+    border: 0.1px solid var(--blue);
+    border-radius: 50%;
+    transform: scale(10);
+    opacity: 0;
+    filter: blur(0.3px);
   }
 }

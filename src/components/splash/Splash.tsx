@@ -1,12 +1,15 @@
-import { MouseEvent } from "react";
+import { MouseEvent, ReactElement } from "react";
+import Github from "../../../public/svg/github.svg?react";
+import LinkedIn from "../../../public/svg/linkedin.svg?react";
 import "./splash.css";
 
 export default function Splash() {
   interface Links {
     name: string;
     href: string;
-    icon?: string;
+    icon?: ReactElement;
   }
+
   const links: Links[] = [
     {
       name: "Projects",
@@ -19,13 +22,20 @@ export default function Splash() {
     {
       name: "github",
       href: "https://github.com/anton-oz",
+      icon: <Github />,
+    },
+    {
+      name: "Linked In",
+      href: "https://linkedin.com/in/anton-osland0",
+      icon: <LinkedIn />,
     },
   ];
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     const anchorEl = e.currentTarget;
+    const { href } = anchorEl;
     const parent = anchorEl.parentElement;
     if (!parent) return;
 
@@ -36,8 +46,10 @@ export default function Splash() {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    ripple.style.left = `${x - 10}px`;
-    ripple.style.top = `${y - 10}px`;
+    if (x > 0) {
+      ripple.style.left = `${x - 10}px`;
+      ripple.style.top = `${y - 10}px`;
+    }
     ripple.style.animation = "ripple 1s ease-out forwards";
 
     parent.appendChild(ripple);
@@ -45,6 +57,13 @@ export default function Splash() {
     setTimeout(() => {
       ripple.remove();
     }, 1000);
+
+    if (href.match("#")) {
+      setTimeout(() => window.location.replace(href), 500);
+      return;
+    }
+
+    setTimeout(() => window.open(href, "_blank"), 500);
   };
 
   return (
@@ -54,11 +73,11 @@ export default function Splash() {
         {links.map((item, i) => (
           <li key={`link-${i}`}>
             <a
+              className={item.icon ? "icon-link" : "name-link"}
               href={item.href}
-              target={item.href[0] === "#" ? "_self" : "_blank"}
               onClick={handleClick}
             >
-              {item.name}
+              {item.icon ? item.icon : item.name}
             </a>
             <div id={`wave-${i}`} className="wave" />
           </li>
