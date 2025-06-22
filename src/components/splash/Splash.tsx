@@ -1,6 +1,7 @@
 import { MouseEvent, ReactElement } from "react";
-import Github from "../../../public/svg/github.svg?react";
-import LinkedIn from "../../../public/svg/linkedin.svg?react";
+import Github from "@/svg/github.svg?react";
+import LinkedIn from "@/svg/linkedin.svg?react";
+
 import "./splash.css";
 
 export default function Splash() {
