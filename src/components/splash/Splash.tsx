@@ -2,19 +2,28 @@ import { MouseEvent } from "react";
 import "./splash.css";
 
 export default function Splash() {
-  const links = [
+  interface Links {
+    name: string;
+    href: string;
+    icon?: string;
+  }
+  const links: Links[] = [
     {
       name: "Projects",
       href: "#projects",
     },
     {
       name: "blog",
-      href: "/",
+      href: "#",
+    },
+    {
+      name: "github",
+      href: "https://github.com/anton-oz",
     },
   ];
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     const anchorEl = e.currentTarget;
     const parent = anchorEl.parentElement;
@@ -44,7 +53,11 @@ export default function Splash() {
       <ul className="link-container">
         {links.map((item, i) => (
           <li key={`link-${i}`}>
-            <a href={item.href} onClick={handleClick}>
+            <a
+              href={item.href}
+              target={item.href[0] === "#" ? "_self" : "_blank"}
+              onClick={handleClick}
+            >
               {item.name}
             </a>
             <div id={`wave-${i}`} className="wave" />
