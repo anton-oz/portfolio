@@ -2,7 +2,6 @@
   width: 100vw;
   height: fit-content;
   padding-top: 12vh;
-  padding-bottom: 6vh;
 
   display: flex;
   flex-direction: column;
@@ -23,8 +22,7 @@
 }
 
 .link-container {
-  position: relative;
-  width: max-content;
+  height: 9em;
   z-index: 100;
 
   padding: 2em;
@@ -54,6 +52,7 @@
     width: 3em;
     height: 3em;
     fill: var(--text);
+    transition: all 500ms;
   }
 
   .name-link {
@@ -84,8 +83,11 @@
     transform: scale(1.1);
   }
 
-  .icon-link:focus {
-    transform: scale(1.1);
+  .icon-link:focus svg {
+    fill: var(--blue);
+    /* TODO: create a background for icons */
+    /* fill: var(--text); */
+    /* background: var(--base); */
   }
 
   .wave {
