@@ -99,10 +99,10 @@
   }
 
   .icon-link:focus svg {
-    fill: var(--base);
+    fill: var(--text);
     circle,
     rect {
-      fill: var(--text);
+      fill: var(--base);
     }
   }
 
