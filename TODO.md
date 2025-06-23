@@ -1,10 +1,7 @@
 ## TODO
 
-- [ ] Add WebGL cursor follow animation
+- [ ] try cursor follow animation
 
-- [ ] get scroll snap work ffs
+- [ ] add the rest of the Projects
 
-- [ ] add portfolio project cards (maybe could have them be interactive w/ WebGL animations)
-
-- [ ] Add custom color palette to `tailwind.config.ts`
-
+- [ ] add to footer

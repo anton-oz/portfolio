@@ -8,7 +8,6 @@ export default defineConfig({
   plugins: [react(), svgr({ include: "**/*.svg?react" })],
   server: {
     port: 2003,
-    open: true,
   },
   resolve: {
     alias: {

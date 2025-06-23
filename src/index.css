@@ -126,3 +126,27 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 800px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    font-size: 6px;
+  }
+}
