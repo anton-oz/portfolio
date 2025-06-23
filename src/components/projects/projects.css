@@ -1,12 +1,45 @@
-.project-container {
+.project-section {
   width: 100vw;
   height: 100vh;
-  background: var(--overlay-2);
+  padding: 0 20vw;
+  display: flex;
+  flex-direction: column;
 }
 
-.project-container h2 {
-  padding: 1em 2em;
-  text-decoration: underline;
-  color: black;
+.project-section h2 {
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5em 1em;
+  color: var(--text);
   font-size: 4em;
+}
+
+.project-container {
+  flex-grow: 1;
+  padding: 0.5em 1em;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5em;
+
+  /* display: grid; */
+  /* grid-template-columns: auto auto; */
+  /* place-items: center; */
+
+  /* border: 1px solid white; */
+  /* border-radius: 0.5rem; */
+}
+
+.project {
+  width: 40rem;
+  height: 20rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  outline: 2px solid white;
+  border-radius: 0.5rem;
 }
