@@ -52,7 +52,16 @@
     width: 3em;
     height: 3em;
     fill: var(--text);
-    transition: all 500ms;
+    transition: all 200ms;
+
+    circle {
+      fill: var(--base);
+    }
+
+    rect {
+      fill: var(--base);
+      border-radius: 1em;
+    }
   }
 
   .name-link {
@@ -81,13 +90,21 @@
 
   .icon-link:hover {
     transform: scale(1.1);
+    svg {
+      fill: var(--base);
+      circle,
+      rect {
+        fill: var(--text);
+      }
+    }
   }
 
   .icon-link:focus svg {
-    fill: var(--blue);
-    /* TODO: create a background for icons */
-    /* fill: var(--text); */
-    /* background: var(--base); */
+    fill: var(--base);
+    circle,
+    rect {
+      fill: var(--text);
+    }
   }
 
   .wave {
