@@ -53,11 +53,15 @@ export default function Splash() {
     }
     ripple.style.animation = "ripple 1s ease-out forwards";
 
+    console.log(anchorEl.style.borderRadius);
+
     parent.appendChild(ripple);
 
     setTimeout(() => {
       ripple.remove();
     }, 1000);
+
+    e.currentTarget.blur();
 
     if (href.match("#")) {
       setTimeout(() => window.location.replace(href), 500);

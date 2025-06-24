@@ -1,3 +1,4 @@
+import Project from "../project/Project";
 import "./projects.css";
 
 export default function Projects() {
@@ -15,9 +16,7 @@ export default function Projects() {
       <h2>Projects</h2>{" "}
       <div className="project-container">
         {projects.map(({ name, img }, i) => (
-          <div className="project" style={{ background: img }} key={i}>
-            <h3>{name}</h3>
-          </div>
+          <Project key={i} name={name} img={img} />
         ))}
       </div>
     </section>

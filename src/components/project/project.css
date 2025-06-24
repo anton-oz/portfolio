@@ -1,0 +1,14 @@
+.project {
+  width: 50rem;
+  height: 30rem;
+  margin-bottom: 6em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  outline: 2px solid white;
+  border-radius: 0.5rem;
+
+  transition: all 200ms;
+}
