@@ -1,15 +1,50 @@
 .project {
   width: 50rem;
-  height: 30rem;
+  height: fit-content;
+  min-height: 30rem;
+  max-height: 50rem;
   margin-bottom: 6em;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
 
   border-radius: 0.5rem;
 
-  background: rgb(360, 360, 360, 0.05);
+  background: rgb(147, 153, 178, 0.25);
 
   transition: all 200ms;
+}
+
+@media (prefers-color-scheme: light) {
+  .project {
+    background: rgb(147, 153, 178, 0.35);
+  }
+}
+
+.project img {
+  max-height: 100%;
+}
+
+.project > div {
+  padding: 1em 2em;
+}
+
+.project div > h3 {
+  padding: 0.25em 0;
+  border-radius: 0.25em;
+
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.project div > p {
+  padding: 0.25em 1em;
+
+  text-align: center;
+
+  font-weight: 500;
+  font-size: 1.75em;
+  line-height: 1.5em;
 }

@@ -24,7 +24,7 @@ export default function App() {
         <Splash />
         <Projects />
       </main>
-      <footer>footer stuff</footer>
+      <footer></footer>
     </>
   );
 }
