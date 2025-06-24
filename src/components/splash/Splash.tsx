@@ -12,14 +12,14 @@ export default function Splash() {
   }
 
   const links: Links[] = [
-    {
-      name: "Projects",
-      href: "#projects",
-    },
-    {
-      name: "blog",
-      href: "#",
-    },
+    // {
+    //   name: "Projects",
+    //   href: "#projects",
+    // },
+    // {
+    //   name: "Blog",
+    //   href: "#",
+    // },
     {
       name: "github",
       href: "https://github.com/anton-oz",
@@ -48,12 +48,10 @@ export default function Splash() {
     const y = e.clientY - rect.top;
 
     if (x > 0) {
-      ripple.style.left = `${x - 10}px`;
-      ripple.style.top = `${y - 10}px`;
+      ripple.style.left = `${x - Math.floor(rect.left / 42)}px`;
+      ripple.style.top = `${y - Math.floor(rect.top / 10)}px`;
     }
     ripple.style.animation = "ripple 1s ease-out forwards";
-
-    console.log(anchorEl.style.borderRadius);
 
     parent.appendChild(ripple);
 
