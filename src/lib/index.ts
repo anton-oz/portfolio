@@ -1,9 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 
-export default function useInView<T extends Element>(): [
-  React.RefObject<T>,
-  boolean,
-] {
+/**
+ * This function is for checking if an element is in view or not.
+ * @returns ref for desired element and isInView boolean state.
+ */
+export function useInView<T extends Element>(): [React.RefObject<T>, boolean] {
   const ref = useRef<T>(null);
   const [isInView, setIsInView] = useState(false);
 
