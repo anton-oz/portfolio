@@ -1,47 +1,163 @@
 nav {
-  width: 16.5em;
-  height: 100%;
-  padding: 2em 3em;
+  width: 100vw;
+  height: fit-content;
+  padding-top: 5vh;
 
-  background: linear-gradient(var(--surface-0), var(--base));
-  filter: drop-shadow(0 0 4rem var(--surface-1));
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  h1 {
+    font-size: 8em;
+    border-bottom: 3px solid;
+  }
 }
 
-nav h1 {
-  position: absolute;
+.link-container {
+  height: 9em;
+  z-index: 100;
 
-  font-size: 3em;
-  letter-spacing: 0.1em;
+  padding: 2em;
 
-  border-bottom: 3px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  /* cursor: pointer; */
-  cursor: default;
+  gap: 1em;
 
-  transition: all;
-  transition-duration: 200ms;
+  li {
+    font-size: 2em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a {
+    transition: all 200ms;
+  }
+
+  a:focus {
+    outline: none;
+  }
+
+  --svg-dim: 7rem;
+
+  svg {
+    width: var(--svg-dim);
+    height: var(--svg-dim);
+    fill: var(--base);
+    transition: all 200ms;
+
+    circle {
+      fill: var(--text);
+    }
+
+    rect {
+      fill: var(--text);
+      border-radius: 1em;
+    }
+  }
+
+  .name-link {
+    position: relative;
+    padding: 0.33em 0.66em;
+
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.25em;
+    text-align: center;
+
+    border: 0.2rem solid;
+    border-radius: 0.75rem;
+
+    animation-iteration-count: 1;
+  }
+  .name-link:hover {
+    color: var(--base);
+    border-color: transparent;
+    background-color: var(--text);
+  }
+
+  @media (prefers-color-scheme: light) {
+    .name-link:hover {
+      color: var(--text);
+      background-color: var(--base);
+    }
+  }
+
+  .name-link:focus {
+    color: var(--base);
+    background-color: var(--text);
+  }
+
+  .icon-link:hover {
+    svg {
+      fill: var(--text);
+      circle,
+      rect {
+        fill: var(--base);
+      }
+    }
+  }
+
+  .icon-link:focus svg {
+    fill: var(--subtext-1);
+    circle,
+    rect {
+      fill: var(--base);
+    }
+  }
+
+  .wave {
+    position: absolute;
+    place-self: center;
+    width: 1em;
+    height: 1em;
+    padding: 1em;
+
+    border-radius: 50%;
+    pointer-events: none;
+    border-width: thin;
+
+    animation-fill-mode: forwards;
+  }
 }
 
-nav h1:hover {
-  letter-spacing: normal;
-  border-bottom-color: var(--text);
-  padding-right: 2em;
-}
-
-@keyframes widen {
+@keyframes fade-in {
   from {
-    width: 0;
+    opacity: 0;
+    filter: blur(1px);
   }
   to {
-    width: 9rem;
+    opacity: 1;
+    filter: blur(0);
   }
 }
 
-@keyframes shorten {
+@keyframes move-up {
   from {
-    width: 9rem;
+    transform: translateY(10%);
   }
   to {
-    width: 0;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ripple {
+  from {
+    background: none;
+    opacity: 1;
+    transform: scale(0);
+    border: 0.1px solid var(--blue);
+    border-width: thin;
+  }
+  to {
+    background: none;
+    border: 0.1px solid var(--blue);
+    transform: scale(10);
+    opacity: 0;
+    filter: blur(0.3px);
   }
 }

@@ -1,27 +1,82 @@
+import { MouseEvent, ReactElement } from "react";
+import Github from "@/svg/github.svg?react";
+import LinkedIn from "@/svg/linkedin.svg?react";
 import "./nav.css";
 
 export default function Nav() {
-  const handleMouseEnter = () => {
-    const nameEl = document.getElementById("name");
-    if (!nameEl) throw new Error("name element is null");
-    nameEl.style.animation = "widen 200ms ease-in forwards";
-  };
+  interface Links {
+    name: string;
+    href: string;
+    icon?: ReactElement;
+  }
 
-  const handleMouseLeave = () => {
-    const nameEl = document.getElementById("name");
-    if (!nameEl) throw new Error("name element is null");
-    nameEl.style.animation = "shorten 200ms ease-in forwards";
+  const links: Links[] = [
+    {
+      name: "github",
+      href: "https://github.com/anton-oz",
+      icon: <Github />,
+    },
+    {
+      name: "Linked In",
+      href: "https://linkedin.com/in/anton-osland0",
+      icon: <LinkedIn />,
+    },
+  ];
+
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    const anchorEl = e.currentTarget;
+    const { href } = anchorEl;
+    const parent = anchorEl.parentElement;
+    if (!parent) return;
+
+    const ripple = document.createElement("div");
+    ripple.className = "wave";
+
+    const rect = parent.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    if (x > 0) {
+      ripple.style.left = `${x - Math.floor(rect.left / 42)}px`;
+      ripple.style.top = `${y - Math.floor(rect.top / 10)}px`;
+    }
+    ripple.style.animation = "ripple 1s ease-out forwards";
+
+    parent.appendChild(ripple);
+
+    setTimeout(() => {
+      ripple.remove();
+    }, 1000);
+
+    e.currentTarget.blur();
+
+    if (href.match("#")) {
+      setTimeout(() => window.location.replace(href), 500);
+      return;
+    }
+
+    setTimeout(() => window.open(href, "_blank"), 500);
   };
 
   return (
     <nav>
-      <h1
-        id="name"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        Anton
-      </h1>
+      <h1>Anton Osland</h1>
+      <ul className="link-container">
+        {links.map((item, i) => (
+          <li key={`link-${i}`}>
+            <a
+              className={item.icon ? "icon-link" : "name-link"}
+              href={item.href}
+              onClick={handleClick}
+            >
+              {item.icon ? item.icon : item.name}
+            </a>
+            <div id={`wave-${i}`} className="wave" />
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }
