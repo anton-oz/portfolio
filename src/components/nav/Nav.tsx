@@ -7,7 +7,7 @@ export default function Nav() {
   interface Links {
     name: string;
     href: string;
-    icon?: ReactElement;
+    icon: ReactElement;
   }
 
   const links: Links[] = [
@@ -66,11 +66,7 @@ export default function Nav() {
       <ul className="link-container">
         {links.map((item, i) => (
           <li key={`link-${i}`}>
-            <a
-              className={item.icon ? "icon-link" : "name-link"}
-              href={item.href}
-              onClick={handleClick}
-            >
+            <a className="icon-link" href={item.href} onClick={handleClick}>
               {item.icon ? item.icon : item.name}
             </a>
             <div id={`wave-${i}`} className="wave" />
