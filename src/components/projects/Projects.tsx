@@ -3,14 +3,15 @@ import "./projects.css";
 
 export default function Projects() {
   const projects = [
-    {
-      name: "Barcan",
-      img: "/projectScreenshots/barcan_2.png",
-      desc:
-        "Minimal Kanban board keep track of todos with " +
-        "quick moving shortcuts.",
-      href: "http://localhost:3001",
-    },
+    // TODO: publish live link for barcan
+    // {
+    //   name: "Barcan",
+    //   img: "/projectScreenshots/barcan_2.png",
+    //   desc:
+    //     "Minimal Kanban board keep track of todos with " +
+    //     "quick moving shortcuts.",
+    //   href: "http://localhost:3001",
+    // },
     {
       name: "Tweeter",
       img: "/projectScreenshots/tweeterScreenshot.png",
