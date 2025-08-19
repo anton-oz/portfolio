@@ -13,17 +13,23 @@ export default function Projects() {
     //   href: "http://localhost:3001",
     // },
     {
+      name: "What Piano Chord",
+      img: "/projectScreenshots/whatPianoChordScreenshot.png",
+      desc: "Piano chord visualizer",
+      href: "https://whatpianochord.com",
+    },
+    {
+      name: "Reading Forward",
+      img: "/projectScreenshots/readingforwardScreenshot.png",
+      desc: "Structured word inquiry tutor portfolio.",
+      href: "https://readingforwardmn.com",
+    },
+    {
       name: "Tweeter",
       img: "/projectScreenshots/tweeterScreenshot.png",
       // desc: "Live chat app built with express, react and socket.io.",
       desc: "Live chat app with questions for users to answer. " + "",
       href: "https://tweeter-4z96.onrender.com/",
-    },
-    {
-      name: "Reading Forward",
-      img: "/projectScreenshots/readingforwardScreenshot.png",
-      desc: "Customer facing website for a tutoring service. ",
-      href: "https://readingforwardmn.com",
     },
   ];
   return (
