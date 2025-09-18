@@ -5,13 +5,11 @@ a {
 
 a:hover > .project {
   box-shadow: 1em 1em 0 var(--text);
-  /* transform: translateY(-1em); */
-  /* transform: translateX(-1em); */
   transform: translate(-1em, -1em);
 }
 
 .project {
-  width: 50rem;
+  width: 40rem;
   height: 100%;
   min-height: 30rem;
   margin-bottom: 4em;

@@ -146,7 +146,13 @@ footer {
   align-items: center;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1800px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1400px) {
   :root {
     font-size: 12px;
   }
